@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-1 lg:px-11 py-4 bg-base-300">
+  <div class="container mx-auto min-h-screen px-1 lg:px-11 py-4 bg-base-300">
     <!-- Movie List Section -->
     <h2 class="text-2xl font-bold mt-8 mb-4">TV Series</h2>
 

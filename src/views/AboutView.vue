@@ -1,47 +1,72 @@
 <template>
-  <div class="container mx-auto px-1 lg:px-11 py-4">
-    <!-- Movie List Section -->
-    <h2 class="text-2xl font-bold mt-8 mb-4">Top Movies</h2>
+  <div
+    class="container mx-auto flex flex-col md:flex-row min-h-screen px-1 lg:px-11 py-4 gap-10"
+  >
+    <main class="flex-1">
+      <!-- Movie List Section -->
+      <h2 class="text-2xl font-bold mt-8 mb-4">Top Movies</h2>
 
-    <!-- Movie Grid -->
-    <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-    >
+      <!-- Movie Grid -->
       <div
-        v-for="(movie, index) in paginatedMovies"
-        :key="index"
-        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4"
       >
-        <img
-          :src="movie.poster"
-          alt="Movie Poster"
-          class="w-full h-64 object-cover"
-        />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">{{ movie.title }}</h3>
-          <p class="text-gray-500 text-sm">{{ movie.genre }}</p>
+        <div
+          v-for="(movie, index) in paginatedMovies"
+          :key="index"
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
+        >
+          <img
+            :src="movie.poster"
+            alt="Movie Poster"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">{{ movie.title }}</h3>
+            <p class="text-gray-500 text-sm">{{ movie.genre }}</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Pagination Controls -->
-    <div class="flex justify-center items-center mt-8 space-x-4">
-      <button
-        @click="prevPage"
-        :disabled="currentPage === 1"
-        class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        Previous
-      </button>
-      <span class="text-lg">{{ currentPage }} / {{ totalPages }}</span>
-      <button
-        @click="nextPage"
-        :disabled="currentPage === totalPages"
-        class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        Next
-      </button>
-    </div>
+      <!-- Pagination Controls -->
+      <div class="flex justify-center items-center mt-8 space-x-4">
+        <button
+          @click="prevPage"
+          :disabled="currentPage === 1"
+          class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Previous
+        </button>
+        <span class="text-lg">{{ currentPage }} / {{ totalPages }}</span>
+        <button
+          @click="nextPage"
+          :disabled="currentPage === totalPages"
+          class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Next
+        </button>
+      </div>
+    </main>
+    <aside class="w-full md:w-1/4 mt-8 md:mt-0">
+      <h2 class="text-2xl font-bold">Ikuti Kami</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-1 gap-4">
+        <div
+          v-for="(movie, index) in paginatedMovies"
+          :key="index"
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
+        >
+          <img
+            :src="movie.poster"
+            alt="Movie Poster"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">{{ movie.title }}</h3>
+            <p class="text-gray-500 text-sm">{{ movie.genre }}</p>
+          </div>
+        </div>
+      </div>
+      <MovieCardComponent />
+    </aside>
   </div>
 </template>
 
@@ -50,6 +75,8 @@ import { ref, computed } from "vue";
 import naruto from "@/assets/img/naruto.jpg";
 import bleach from "@/assets/img/bleach.jpg";
 import onepiece from "@/assets/img/onepiece.jpg";
+
+import MovieCardComponent from "@/components/MovieCardComponent.vue";
 
 // Sample movies for the card list
 const movies = ref([

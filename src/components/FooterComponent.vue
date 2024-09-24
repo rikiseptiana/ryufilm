@@ -39,7 +39,7 @@
         ></path>
       </svg>
       <p>
-        Copyright Riki Septiana 2024
+        Copyright 2024 @ Riki Septiana
         <br />
         Providing reliable tech since 1999
       </p>
