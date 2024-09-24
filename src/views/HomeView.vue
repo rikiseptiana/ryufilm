@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-1 lg:px-11 py-4">
+  <div class="container mx-auto px-2 lg:px-11 py-4">
     <!-- Carousel Section -->
     <div class="relative overflow-hidden max-w-full">
       <!-- Wrapper for carousel items -->
@@ -36,9 +36,9 @@
     </div>
 
     <!-- Movie List Section -->
-    <h2 class="text-2xl font-bold mt-8 mb-4">Latest Movies</h2>
+    <h2 class="text-2xl font-bold mt-8 mb-4">Update Terbaru</h2>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
     >
       <div
         v-for="(movie, index) in movies"
@@ -53,6 +53,10 @@
         <div class="p-4">
           <h3 class="text-lg font-semibold">{{ movie.title }}</h3>
           <p class="text-gray-500 text-sm">{{ movie.genre }}</p>
+          <span class="text-gray-800 text-sm badge badge-primary"> anime </span>
+          <span class="text-gray-800 text-sm badge badge-primary">
+            on going
+          </span>
         </div>
       </div>
     </div>
@@ -71,7 +75,7 @@
           alt="Movie Poster"
           class="w-full h-64 object-cover"
         />
-        <div class="p-4">
+        <div class="p-4 gap-2">
           <h3 class="text-lg font-semibold">{{ movie.title }}</h3>
           <p class="text-gray-500 text-sm">{{ movie.genre }}</p>
         </div>
