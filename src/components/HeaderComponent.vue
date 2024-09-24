@@ -2,7 +2,7 @@
   <div class="navbar bg-base-100">
     <div class="flex-1">
       <a class="btn btn-ghost text-xl">
-        <img src="@/assets/IMG/logo.jpg" alt="logo" class="w-10" />
+        <img src="@/assets/img/logo.jpg" alt="logo" class="w-10" />
         RyuFilm.id
       </a>
     </div>
