@@ -10,7 +10,7 @@
         <div
           v-for="(banner, index) in banners"
           :key="index"
-          class="min-w-full h-40 sm:h-48 md:h-64 lg:h-80 overflow-hidden"
+          class="min-w-full h-64 md:h-80 lg:h-96 overflow-hidden"
         >
           <img
             :src="banner"
@@ -38,7 +38,7 @@
     <!-- Movie List Section -->
     <h2 class="text-2xl font-bold mt-8 mb-4">Update Terbaru</h2>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
     >
       <div
         v-for="(movie, index) in movies"

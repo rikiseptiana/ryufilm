@@ -1,10 +1,12 @@
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-300">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">
-        <img src="@/assets/img/logo.jpg" alt="logo" class="w-10" />
-        RyuFilm.id
-      </a>
+      <RouterLink to="/">
+        <a class="btn btn-ghost text-xl">
+          <img src="@/assets/img/logo.jpg" alt="logo" class="w-10" />
+          RyuFilm.id
+        </a>
+      </RouterLink>
     </div>
     <div class="flex-none gap-2">
       <div class="form-control">
