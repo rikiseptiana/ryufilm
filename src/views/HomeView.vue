@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto px-11">
+  <div class="container mx-auto px-1 lg:px-11 py-4">
     <!-- Carousel Section -->
-    <div class="relative">
+    <div class="relative overflow-hidden max-w-full">
       <!-- Wrapper for carousel items -->
       <div
         class="flex transition-transform duration-300 ease-in-out"
@@ -56,7 +56,8 @@
         </div>
       </div>
     </div>
-    <h2 class="text-2xl font-bold mt-8 mb-4">Top Movies</h2>
+    <!-- Movie List Section -->
+    <h2 class="text-2xl font-bold mt-8 mb-4">Latest Movies</h2>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
     >
@@ -91,19 +92,19 @@ const banners = ref([banner1, banner2, banner3]);
 // Sample movies for the card list
 const movies = ref([
   {
-    title: "Movie 1",
+    title: "Naruto Shippuden",
     genre: "Action",
     poster: banner1,
   },
   {
-    title: "Movie 2",
+    title: "Bleach",
     genre: "Drama",
-    poster: "https://via.placeholder.com/300x400?text=Movie+2",
+    poster: banner2,
   },
   {
-    title: "Movie 3",
+    title: "One Piece",
     genre: "Comedy",
-    poster: "https://via.placeholder.com/300x400?text=Movie+3",
+    poster: banner3,
   },
   {
     title: "Movie 4",
@@ -126,10 +127,12 @@ const movies = ref([
 const currentSlide = ref(0);
 const totalSlides = banners.value.length;
 
+// Move to next slide, looping back to the first slide if necessary
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % totalSlides;
 };
 
+// Move to previous slide, looping back to the last slide if necessary
 const prevSlide = () => {
   currentSlide.value = (currentSlide.value - 1 + totalSlides) % totalSlides;
 };

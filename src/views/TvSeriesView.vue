@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto px-1 lg:px-11 py-4">
+  <div class="container mx-auto px-1 lg:px-11 py-4 bg-base-300">
     <!-- Movie List Section -->
-    <h2 class="text-2xl font-bold mt-8 mb-4">Top Movies</h2>
+    <h2 class="text-2xl font-bold mt-8 mb-4">TV Series</h2>
 
     <!-- Movie Grid -->
     <div
@@ -41,6 +41,32 @@
       >
         Next
       </button>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+      <div
+        class="card lg:card-side bg-base-100 shadow-xl"
+        v-for="movie in movies"
+      >
+        <figure>
+          <img
+            :src="movie.poster"
+            alt="Movie"
+            class="w-64 h-full object-cover"
+          />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">{{ movie.title }}</h2>
+          <p>posted on</p>
+          <p>categories :</p>
+          <p>episode :</p>
+          <p>rating :</p>
+          <p>release date :</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Watch</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
